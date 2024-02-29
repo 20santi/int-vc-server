@@ -1,6 +1,6 @@
-import http from "http";
-import express from "express";
-import { Server } from "socket.io";
+const http = require("http");
+const express = require("express");
+const { Server } = require("socket.io"); // Correct import statement
 
 const app = express();
 
@@ -12,18 +12,18 @@ const io = new Server(server, {
   },
 });
 
-io.on("connection", (socket: any) => {
+io.on("connection", (socket) => {
   console.log("Connected: ", socket.id);
 
   socket.on("on-client-connect", () => {
     socket.broadcast.emit("get-editor-state");
   });
 
-  socket.on("editor-state", (code: string) => {
+  socket.on("editor-state", (code) => {
     socket.broadcast.emit("editor-state-from-server", code);
   });
 
-  socket.on("code-change", (code: string) => {
+  socket.on("code-change", (code) => {
     socket.broadcast.emit("code-change", code);
   });
 });
