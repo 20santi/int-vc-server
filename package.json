@@ -1,0 +1,20 @@
+{
+  "name": "int-vc-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "nodemon index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/node": "^20.11.23",
+    "express": "^4.18.3",
+    "nodemon": "^3.1.0",
+    "socket.io": "^4.7.4",
+    "ts-node": "^10.9.2"
+  }
+}
